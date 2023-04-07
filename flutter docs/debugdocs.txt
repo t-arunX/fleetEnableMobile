@@ -1,0 +1,30 @@
+1. text widget props are self aligned they cant be centred unless they have the full screen width 
+
+2. function reference:
+ void main() {
+  var temp = Bar();
+  temp.foo();
+}
+
+class BarFoo {
+  late final Function arg;
+  BarFoo(this.arg);
+  caller() { arg;}
+}
+
+// main widget fun()
+class Bar {
+  void _printer(int val) {
+    print(val);
+  }
+
+  foo() {
+    var x = BarFoo(_printer);
+    x.caller();
+  }
+}
+
+
+3.runtime constant(final) vs compile time constant(const)
+
+
