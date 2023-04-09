@@ -111,7 +111,8 @@ class DisplayProfile extends StatelessWidget {
                       ),
                       Text(
                         userData.name,
-                        style: const TextStyle(fontSize: 20,color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ],
                   ),
@@ -124,7 +125,8 @@ class DisplayProfile extends StatelessWidget {
                       ),
                       Text(
                         userData.character,
-                        style: const TextStyle(fontSize: 20,color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ],
                   ),
@@ -137,7 +139,8 @@ class DisplayProfile extends StatelessWidget {
                       ),
                       Text(
                         userData.village,
-                        style: const TextStyle(fontSize: 20,color: Colors.white),
+                        style:
+                            const TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ],
                   ),

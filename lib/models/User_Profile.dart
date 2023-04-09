@@ -29,6 +29,4 @@ class UserProfile {
   set name(String value) {
     _name = value;
   }
-
-
 }
