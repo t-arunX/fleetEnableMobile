@@ -11,17 +11,17 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       // color: Colors.white,
-      // decoration: const BoxDecoration(color: Colors.white,boxShadow:
-      //   [BoxShadow(
-      //   color: Colors.black,
-      //   offset: Offset(
-      //     10.0,
-      //     15.0,
-      //   ),
-      //   blurRadius: 20.0,
-      //   spreadRadius: 5.0,
-      // ),]
-      // ),
+      decoration: const BoxDecoration(color: Colors.white, boxShadow: [
+        BoxShadow(
+          color: Colors.black,
+          offset: Offset(
+            5.0,
+            20.0,
+          ),
+          blurRadius: 20.0,
+          spreadRadius: 5.0,
+        ),
+      ]),
       child: InkWell(
         splashColor: Colors.grey.shade300,
         onTap: () => Navigator.push(context,
@@ -48,7 +48,7 @@ class Profile extends StatelessWidget {
                 margin: const EdgeInsets.all(0.5),
                 padding: const EdgeInsets.all(20),
                 child: Text(
-                  user!.name,
+                  user?.name ?? "not available",
                   style: const TextStyle(
                       fontSize: 15, color: Color.fromRGBO(35, 35, 35, 100)),
                 ),
@@ -61,6 +61,10 @@ class Profile extends StatelessWidget {
   }
 }
 
+class DisplayColors {
+  static const Color textLabel = Colors.white24;
+}
+
 class DisplayProfile extends StatelessWidget {
   UserProfile userData;
 
@@ -71,24 +75,25 @@ class DisplayProfile extends StatelessWidget {
     return MaterialApp(
       title: "profile page",
       home: Scaffold(
+        backgroundColor: const Color.fromRGBO(18, 140, 126, 10),
+        // 7 94 84
+        // 18, 140, 126
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(18, 140, 126,100),
+          backgroundColor: Colors.teal,
           title: const Text("user Profile"),
-          leading: Container(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(18, 140, 126, 100), //coloring
-              ),
-              onPressed: () => Navigator.pop(context),
-              child: const Icon(Icons.arrow_back_ios_new),
+          leading: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.teal, //coloring
             ),
+            onPressed: () => Navigator.pop(context),
+            child: const Icon(Icons.arrow_back_ios_new),
           ),
         ),
         body: Column(
           children: [
             Image.network(
               userData.profileImage,
-              width: 500,
+              width: double.maxFinite,
               // height: 250,
               // fit: BoxFit.fitHeight,
             ),
@@ -101,11 +106,11 @@ class DisplayProfile extends StatelessWidget {
                       const Text(
                         "Name: ",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20, color: Colors.black54),
+                        style: TextStyle(fontSize: 18, color: Colors.white54),
                       ),
                       Text(
                         userData.name,
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20,color: Colors.white),
                       ),
                     ],
                   ),
@@ -114,11 +119,11 @@ class DisplayProfile extends StatelessWidget {
                       const Text(
                         "Character: ",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20, color: Colors.black54),
+                        style: TextStyle(fontSize: 20, color: Colors.white54),
                       ),
                       Text(
                         userData.character,
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20,color: Colors.white),
                       ),
                     ],
                   ),
@@ -127,11 +132,11 @@ class DisplayProfile extends StatelessWidget {
                       const Text(
                         "Village: ",
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 20, color: Colors.black54),
+                        style: TextStyle(fontSize: 20, color: Colors.white54),
                       ),
                       Text(
                         userData.village,
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20,color: Colors.white),
                       ),
                     ],
                   ),

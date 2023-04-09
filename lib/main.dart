@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
         MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromRGBO(18, 140, 126,100),
+          backgroundColor: Colors.teal,
           title: const Text("Profiles"),
         ),
         body: SingleChildScrollView(
