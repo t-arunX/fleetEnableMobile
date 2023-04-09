@@ -1,9 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_projects/models/User_Profile.dart';
-import 'package:flutter_projects/uiSamples/ex1.dart';
 
 import 'uiSamples/Profile.dart';
 
@@ -39,7 +35,6 @@ class MyApp extends StatelessWidget {
         "https://static.wikia.nocookie.net/naruto/images/4/4a/Obito_Uchiha.png/revision/latest/scale-to-width-down/300?cb=20220223045744",
         "Akatsuki member",
         "Hidden Leaf village"),
-
     UserProfile(
         "Dengaku",
         "https://static.wikia.nocookie.net/naruto/images/f/f6/Dengaku.png/revision/latest/scale-to-width-down/300?cb=20150117112616",
@@ -55,7 +50,6 @@ class MyApp extends StatelessWidget {
         "https://static.wikia.nocookie.net/naruto/images/9/97/Hinata.png/revision/latest/scale-to-width-down/300?cb=20141010104729",
         "Team 8",
         "Hidden Leaf village"),
-
     UserProfile(
         "Himawari Uzumaki",
         "https://static.wikia.nocookie.net/naruto/images/2/26/Himawari.png/revision/latest/scale-to-width-down/300?cb=20171115100745",
@@ -79,9 +73,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // DisplayProfile(users.first);
-        MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,

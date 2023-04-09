@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/models/User.dart';
+
 import '../models/User_Profile.dart';
 
 class Profile extends StatelessWidget {
@@ -22,6 +22,7 @@ class Profile extends StatelessWidget {
           spreadRadius: 5.0,
         ),
       ]),
+
       child: InkWell(
         splashColor: Colors.grey.shade300,
         onTap: () => Navigator.push(context,
