@@ -48,6 +48,11 @@ class JsonConvertor {
     data['village'] = this._village;
     return data;
   }
+
+  @override
+  String toString() {
+    return '{_name: $_name, _profileImage: $_profileImage, _character: $_character, _village: $_village}';
+  }
 }
 
 void main() {
@@ -85,11 +90,7 @@ void main() {
   var foo = jsonDecode(data);
   var list = [];
   for (var i in foo) {
-    list.add(JsonConvertor(
-        name: i['name'],
-        profileImage: i['profileImage'],
-        character: i['character'],
-        village: i['village']));
+    list.add(JsonConvertor.fromJson(i));
   }
-  print(list[0].name);
+  print(list.first);
 }
