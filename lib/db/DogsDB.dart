@@ -9,7 +9,6 @@ Future getConnection() async {
       'CREATE TABLE dogs(id INTEGER PRIMARY KEY,name TEXT,age INTEGER)';
   // print(Dog(id: 1,name: "csca",age: 2).toMap());
   WidgetsFlutterBinding.ensureInitialized(); //avoid flutter upgrade errors
-  // print(await getDatabasesPath());
   final dataBase = openDatabase(
     join(await getDatabasesPath(), 'dog_database.db'),
     // onCreate: (db, version) async {

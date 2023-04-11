@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Data/ProfileData.dart';
+import 'package:flutter_projects/widgets/TextDisplay.dart';
 
 import './widgets/Profile.dart';
+import 'http/HttpCall.dart';
 
-void main() {
+void main() async {
+  String result = (await new HttpCall.getData()) as String;
   runApp(MyApp());
 }
 
@@ -21,21 +24,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.teal,
-          title: const Text("Profiles"),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ...?widgetList(),
-              // DisplayProfile(users.last)
-            ],
-          ),
-        ),
-      ),
-    );
+    return TextDisplay();
+    //   MaterialApp(
+    //   home: Scaffold(
+    //     appBar: AppBar(
+    //       backgroundColor: Colors.teal,
+    //       title: const Text("Profiles"),
+    //     ),
+    //     body: SingleChildScrollView(
+    //       child: Column(
+    //         children: [
+    //           ...?widgetList(),
+    //           // DisplayProfile(users.last)
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }
