@@ -10,7 +10,8 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      // color: Colors.white,
+      // color: Colors.white,source /etc/profile
+
       decoration: const BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
           color: Colors.black,
