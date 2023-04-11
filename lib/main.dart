@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Data/ProfileData.dart';
+import 'package:flutter_projects/http/Http.dart';
 
 import './widgets/Profile.dart';
 
 void main() {
   runApp(MyApp());
+}
+
+Future getData() async {
+  // doesn't work directly work with widgets need to create a class for that :: refer album class form flutter.dev
+  var http = Http();
+  var data = await http.getData();
+  return data;
 }
 
 class MyApp extends StatelessWidget {
@@ -30,8 +38,9 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ...?widgetList(),
+              // ...?widgetList(),
               // DisplayProfile(users.last)
+              Text(""),
             ],
           ),
         ),
