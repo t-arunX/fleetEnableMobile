@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/User_Profile.dart';
-import '../Profile.dart';
+import './models/User.dart';
 
 class _SignUpPageState extends StatefulWidget {
   const _SignUpPageState({super.key});
@@ -14,6 +13,7 @@ class _SignUpPageState extends StatefulWidget {
 
 class SignUpPage extends State<_SignUpPageState> {
   final _formKey = GlobalKey<FormState>();
+  User user = User();
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +47,9 @@ class SignUpPage extends State<_SignUpPageState> {
                               children: <Widget>[
                                 TextFormField(
                                   decoration: const InputDecoration(
-                                      hintText: "enter your email",
-                                      labelText: 'e-mail'),
+                                    hintText: "enter your email",
+                                    labelText: 'e-mail',
+                                  ),
                                   // print("password validator");
                                   validator: (value) {
                                     // String? validate = "true";
@@ -56,6 +57,9 @@ class SignUpPage extends State<_SignUpPageState> {
                                     return (value == null || value.isEmpty)
                                         ? 'Enter valid email'
                                         : null;
+                                  },
+                                  onChanged: (value) {
+                                    user.email = value;
                                   },
                                 ),
                                 TextFormField(
@@ -72,8 +76,15 @@ class SignUpPage extends State<_SignUpPageState> {
                                     // String? validate = "true";
                                     print("password validator");
                                     return (value == null || value.isEmpty)
-                                        ? 'Password must contain atleast 4 characters'
+                                        ? 'Password must contain at least 4 characters'
                                         : null;
+                                  },
+                                  // onSaved: (value){
+                                  //   // print("ssssssssssssssssssssssssss");
+                                  //   print("$value -------------------");
+                                  // },
+                                  onChanged: (value) {
+                                    user.password = value;
                                   },
                                 ),
                                 Container(
@@ -82,19 +93,8 @@ class SignUpPage extends State<_SignUpPageState> {
                                     child: const Text("Signup"),
                                     onPressed: () {
                                       if (_formKey.currentState!.validate()) {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                DisplayProfile(
-                                              UserProfile(
-                                                  "Itachi Uchiha",
-                                                  "https://static.wikia.nocookie.net/naruto/images/b/bb/Itachi.png/revision/latest/scale-to-width-down/300?cb=20220214112531",
-                                                  "prodigy",
-                                                  "Hidden Leaf village"),
-                                            ),
-                                          ),
-                                        );
+                                        print(user);
+                                        //handle submission
                                       }
                                     },
                                   ),
