@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/widgets/todoApp/LoginPage.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final Widget page;
+
+  const HomePage(this.page, {Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => HomePageState();
@@ -14,11 +15,8 @@ class HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.fallback(useMaterial3: mounted),
-      home: const LoginPageState(),
+      home: widget.page, //todoapp
     );
   }
 }
 
-void main() {
-  runApp(const HomePage());
-}
