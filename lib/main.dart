@@ -15,6 +15,10 @@ class Log {
     } on Exception catch (_, ex) {
       print("failed");
     }
+    navigate(context);
+  }
+
+  navigate(context) {
     Navigator.pushReplacement<void, void>(
       context,
       MaterialPageRoute<void>(
@@ -41,7 +45,7 @@ void main() async {
         prefs.getBool('login'); // fails for the first time of initialization
   } on Exception catch (_, ex) {
     await prefs.setBool('login', false);
-    exists = false;
+    // exists = false;
   }
   // check for previous login status
   if (exists == null || exists == false) {
